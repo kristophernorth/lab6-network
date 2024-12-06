@@ -1,8 +1,11 @@
 <script setup>
+import { AppState } from '@/AppState';
 import { postsService } from '@/services/PostsService';
 import { logger } from '@/utils/Logger';
 import Pop from '@/utils/Pop';
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
+
+  const posts = computed(() => AppState.posts)
 
   onMounted(() => {
     getPosts()
@@ -19,7 +22,7 @@ import { onMounted } from 'vue';
 </script>
 
 <template>
-  <h1>Posts</h1>
+  <h1>{{ posts }}</h1>
 </template>
 
 <style scoped lang="scss">

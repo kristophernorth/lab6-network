@@ -1,16 +1,16 @@
 <script setup>
-import { postsService } from '@/services/PostsService';
+import { profilesService } from '@/services/ProfilesService';
 import { logger } from '@/utils/Logger';
 import Pop from '@/utils/Pop';
 import { onMounted } from 'vue';
 
-  onMounted(() => {
-    getPosts()
+ onMounted(() => {
+    getProfiles()
   })
 
-  async function getPosts() {
+  async function getProfiles() {
     try {
-      await postsService.getPosts()
+      await profilesService.getProfiles()
     } catch (error) {
       Pop.meow(error)
       logger.error('[Getting posts]', error)
@@ -22,5 +22,7 @@ import { onMounted } from 'vue';
   <h1>Posts</h1>
 </template>
 
-<style scoped lang="scss">
+
+<style lang="scss" scoped>
+
 </style>

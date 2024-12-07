@@ -9,7 +9,7 @@ onMounted(() => {
     getSearchResults()
   })
 
-  async function getPosts() {
+  async function getSearchResults() {
     try {
       await searchService.getSearchResults()
     } catch (error) {
@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Posts</h1>
+  <h1>Search</h1>
 </template>
 
 

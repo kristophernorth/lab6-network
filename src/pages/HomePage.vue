@@ -38,14 +38,20 @@ import { computed, onMounted } from 'vue';
 
 <template>
   <div class="container">
-    <section class="row mt-3">
-      <div v-for="post in posts" :key="post.id" class="col-9 mb-3">
-        <PostCard :postProp="post" />
+    <div class="row">
+      <div class="col-9">
+        <section class="row mt-3">
+          <div v-for="post in posts" :key="post.id" class="col-12 my-2">
+            <PostCard :postProp="post" />
+          </div>
+        </section>
       </div>
-    </section>
-      <div v-for="promo in promos" :key="promo.id" class="col-3 mb-3">
-        <PromoCard :promoProp="promo" />
+      <div class="col-3">
+        <div v-for="promo in promos" :key="promo.id" class="col-12">
+          <PromoCard :promoProp="promo" />
+        </div>
       </div>
+    </div>
   </div>
 </template>
 

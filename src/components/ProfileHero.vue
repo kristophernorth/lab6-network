@@ -1,6 +1,8 @@
 <script setup>
+import { Post } from '@/models/Post';
+
 defineProps({
-  postProp: { type: Post, required: true}
+  heroProp: { type: Hero, required: true}
 })
 </script>
 
@@ -9,12 +11,12 @@ defineProps({
   <div class="card">
     <div class="card-body">
       <div class="d-flex align-items-center">
-        <img :src="postProp.creator.picture" :alt="postProp.creator.name" class="creator-img">
-        <h5 class="card-title ps-2">{{ postProp.creator.name }}</h5>
-        <p class="card-body">{{ postProp.body }}</p>
+        <img :src="heroProp.creator.picture" :alt="heroProp.creator.name" class="creator-img">
+        <h5 class="card-title ps-2">{{ heroProp.creator.name }}</h5>
+        <p class="card-body">{{ heroProp.body }}</p>
       </div>
     </div>
-    <img :src="postProp.imgUrl" class="card-img-top" alt="...">
+    <img :src="heroProp.imgUrl" class="card-img-top" alt="...">
   </div>
 </template>
 

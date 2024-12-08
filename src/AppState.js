@@ -16,5 +16,6 @@ export const AppState = reactive({
   activePost: null,
   /** @type {import('./models/Account.js').Account[]} profile information separate from account*/
   activeProfile: null,
-
+  currentPage: 1,
+  totalPages: Infinity,
 })

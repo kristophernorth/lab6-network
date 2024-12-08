@@ -11,6 +11,7 @@ defineProps({
   <div class="card">
     <div class="card-body">
       <div class="d-flex align-items-center">
+        <RouterLink :to="{name: 'ProfilePage', params: {profileId: profileId}}">
         <img :src="postProp.creator.picture" :alt="postProp.creator.name" class="creator-img">
         <h5 class="card-title ps-2">{{ postProp.creator.name }}</h5>
         <p class="card-body">{{ postProp.body }}</p>

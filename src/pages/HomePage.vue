@@ -1,6 +1,8 @@
 <script setup>
 import { AppState } from '@/AppState';
+import PageButtons from '@/components/PageButtons.vue';
 import PostCard from '@/components/PostCard.vue';
+import PostForm from '@/components/PostForm.vue';
 import PromoCard from '@/components/PromoCard.vue';
 import { postsService } from '@/services/PostsService';
 import { promosService } from '@/services/PromosService';
@@ -37,22 +39,25 @@ import { computed, onMounted } from 'vue';
 </script>
 
 <template>
+  <PageButtons/>
   <div class="container">
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-9">
-        <section class="row mt-3">
+        <section class="row">
+          <PostForm/> //add v-if here to only show for current logged-in user
           <div v-for="post in posts" :key="post.id" class="col-12 my-2">
-            <PostCard :postProp="post" />
+            <PostCard :postProp="post"/>
           </div>
         </section>
       </div>
       <div class="col-3">
-        <div v-for="promo in promos" :key="promo.id" class="col-12">
+        <div v-for="promo in promos" :key="promo.id" class="col-12 my-2">
           <PromoCard :promoProp="promo" />
         </div>
       </div>
     </div>
   </div>
+  <PageButtons/>
 </template>
 
 <style scoped lang="scss">

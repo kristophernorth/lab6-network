@@ -16,16 +16,16 @@ const routes = [
     name: 'About',
     component: loadPage('AboutPage')
   },
-  // {
-  //   path: '/profile',
-  //   name: 'Profile',
-  //   component: loadPage('ProfilePage')
-  // },
   {
-    path: '/profile/:profileId',
+    path: '/profile',
     name: 'Profile',
     component: loadPage('ProfilePage')
   },
+  // {
+  //   path: '/profile/:profileId',
+  //   name: 'Profile',
+  //   component: loadPage('ProfilePage')
+  // },
   {
     path: '/search',
     name: 'Search',

@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState';
+import PageButtons from '@/components/PageButtons.vue';
 import ProfileHero from '@/components/ProfileHero.vue';
 import PromoCard from '@/components/PromoCard.vue';
 import { postsService } from '@/services/PostsService';
@@ -21,6 +22,7 @@ const route = useRoute()
   }, { immediate: true })
 
   onMounted(() => {
+    getProfileById()
     getPromos()
   })
 
@@ -84,6 +86,7 @@ async function getPromos() {
       </div>
     </div>
   </div>
+  <PageButtons/>
 </template>
 
 
